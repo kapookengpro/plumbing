@@ -2,12 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.1.
 
+## Install Global 
+npm install -g @angular/cli
+
 ## Reinstall node_modules It follow package.json
 npm install
+
+## Remove node_modules
+rm -rf node_modules
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Development server with open
+ng build serve --open or ng build serve -o
+
+## Cancel serve
+ctrl + c
 
 ## Code scaffolding
 
@@ -30,6 +42,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Create new component
+ng generate component `name_component`
 
 ## Further help
 
