@@ -1,28 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { Demo1Component } from './main-page/demo1/demo1.component';
-import { Demo2Component } from './main-page/demo2/demo2.component';
-import { Demo3Component } from './main-page/demo3/demo3.component';
-
 import { AgmCoreModule } from '@agm/core';
+import { AppRoutingModule } from './/app-routing.module';
 
+
+/*const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+];*/
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
-    Demo1Component,
-    Demo2Component,
-    Demo3Component
   ],
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: ''
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

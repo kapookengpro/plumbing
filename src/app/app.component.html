@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -40,16 +40,247 @@
 
 </agm-map>
 
-<!-- <h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul> -->
+-->
 
+<section class="menu cid-qyY7WBynLk" once="menu" id="menu1-1" data-rv-view="1210">
+
+    
+
+  <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
+      </button>
+      <div class="menu-logo">
+          <div class="navbar-brand">
+              
+              <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="https://mobirise.com/bootstrap-template/">
+                     <img src="assets/images/logo_small.png"> โครงการโทรมาตรขนาดเล็ก</a></span>
+          </div>
+      </div>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+              <li class="nav-item dropdown">
+                  <a class="nav-link link text-black display-4" href="#"  aria-expanded="false">ตำแหน่งทั้งหมด</a>
+              </li>
+              <li class="nav-item dropdown">
+                      <a class="nav-link link text-black display-4" href="#"  aria-expanded="false">มุมมองทั่วไป</a>
+              </li>
+              <li class="nav-item dropdown">
+                      <a class="nav-link link text-black display-4" href="#"  aria-expanded="false">ศูนย์/โครงการ</a>
+              </li>
+              <li class="nav-item dropdown">
+                      <a class="nav-link link text-black display-4" href="#"  aria-expanded="false">ลุ่มน้ำ</a>
+              </li>
+              <li class="nav-item dropdown">
+                      <a class="nav-link link text-black display-4" href="#"  aria-expanded="false">จังหวัด</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.co/h">make your own website for free</a></section><section class="cid-qyY7WeZi1w mbr-fullscreen mbr-parallax-background" id="header2-0" data-rv-view="1212">
+
+  
+
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(152, 152, 152);"></div>
+
+  <!-- <iframe frameborder="0" style="width:80%;height:65%;position:absolute;top:126px;left:10%;opacity: 0.9;border: 3px solid #656565;border-radius: 4px;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe> -->
+  
+  <agm-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="false"
+  (mapClick)="mapClicked($event)" style="width:80%;height:65%;position:absolute;top:126px;left:10%;opacity: 0.9;border: 3px solid #656565;border-radius: 4px;">
+
+  <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <strong><img src="https://seedroid.com/img/post/icons/128/com.shuewe.picturemap.jpg"></strong>
+    </agm-info-window>
+    
+  </agm-marker>
+  
+</agm-map>
+
+  <div class="container align-center">
+        
+      <div class="row justify-content-md-center">
+              
+           <!-- <div class="mbr-white col-md-10">
+                  <iframe frameborder="0" style="border:0;width:100%;height:100%;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe>
+             <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">Responsive Bootstrap Corporate Template</h1>
+              
+              <p class="mbr-text pb-3 mbr-fonts-style display-5">
+                  Ut nisi orci, consequat a metus ut, aliquet fermentum lectus. In pretium vehicula aliquam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+              <div class="mbr-section-btn"><a class="btn btn-md btn-black-outline display-4" href="https://mobirise.com/bootstrap-template/mobirise-free-template.zip">FREE DOWNLOAD</a>
+                  <a class="btn btn-md btn-black-outline display-4" href="#">LIVE DEMO</a></div>
+          </div>-->
+      </div>
+  </div>
+  <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+      <a href="#next">
+          <i class="mbri-down mbr-iconfont"></i>
+      </a>
+  </div>
+</section>
+
+<section class="cid-qyY7XZqMLr mbr-fullscreen mbr-parallax-background" id="header15-2" data-rv-view="1215">
+
+  
+
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(7, 59, 76);"></div>
+
+  <div class="container align-right">
+<div class="row">
+  <div class="mbr-white col-lg-8 col-md-7 content-container">
+      <h2 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">
+          ติดตามเรา</h2>
+      <p class="mbr-text pb-3 mbr-fonts-style display-5">
+              บุคคลทั่วไปสามารถเข้าชมรายงานผลของการวัดค่าทั้งระดับน้ำ ปริมาณน้ำฝน และคุณภาพอากาศ
+      </p>
+  </div>
+  <div class="col-lg-4 col-md-5">
+  <div class="form-container">
+      <div class="media-container-column" data-form-type="formoid">
+          <div data-form-alert="" hidden="" class="align-center">
+              Thanks for filling out the form!
+          </div>
+          <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" data-form-email="true" value="yXisQBvFQVmHOcBX79o+bOvDvoLpUn9N6RQ64BjTWOc0bOKDX35xIyci5cAl7E4TuolvqtohEe1ZAfBci8SGal13mIuCRoi+wqhFtb4iJBZOEah2uEZP8rBqC79DMBg6">
+              <div data-for="name">
+                  <div class="form-group">
+                      <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Name" required="" id="name-header15-2">
+                  </div>
+              </div>
+              <div data-for="email">
+                  <div class="form-group">
+                      <input type="email" class="form-control px-3" name="email" data-form-field="Email" placeholder="Email" required="" id="email-header15-2">
+                  </div>
+              </div>
+              <div data-for="phone">
+                  <div class="form-group">
+                      <input type="tel" class="form-control px-3" name="phone" data-form-field="Phone" placeholder="Phone" id="phone-header15-2">
+                  </div>
+              </div>
+              
+              <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-white display-4">SEND FORM</button></span>
+          </form>
+      </div>
+  </div>
+  </div>
+</div>
+  </div>
+  <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+      <a href="#next">
+          <i class="mbri-down mbr-iconfont"></i>
+      </a>
+  </div>
+</section>
+
+
+
+<section class="cid-qyY8keMIH0" id="footer2-a" data-rv-view="1248">
+
+  
+
+  
+
+  <div class="container">
+      <div class="media-container-row content mbr-white">
+          <div class="col-12 col-md-3 mbr-fonts-style display-7">
+              <p class="mbr-text">
+                  <strong>Address</strong>
+                  <br>
+                  <br>811 ถ.สามเสน แขวงถนนนครไชยศรี
+                  <br>เขตดุสิต กรุงเทพมหานคร 10300
+                  <br>สายด่วน 1460 ชลประทาน บริการประชาชน
+                  <br>ตู้ปณ. 1460 ปณฝ. บางกระบือ เขตดุสิต กทม. 10301
+                  <br>
+                  <br>
+                  <br><strong>Contacts</strong>
+                  <br>
+                  <br>E-mail : 1460@mail.rid.go.th, kromchol@mail.rid.go.th 
+                  <br>Phone : 02-241-0020 ถึง 29
+              </p>
+          </div>
+          <div class="col-12 col-md-3 mbr-fonts-style display-7">
+              <p class="mbr-text">
+                  <strong>Links</strong>
+                  <br>
+                  <br><a class="text-white" href="http://www.rid.go.th/">กรมชลประทาน</a>
+                  <br><a class="text-white" href="http://water.rid.go.th/hydrology/index.html">ส่วนอุทกวิทยา</a>
+                  <br><a class="text-white" href="http://water.rid.go.th/hydhome">สำนักอุทก</a>
+                  <br>
+                  <br><strong>ไทยนิยม</strong>
+                  <br>
+                  <br><img src="assets/images/re-thainiyom61.png">
+              </p>
+          </div>
+          <div class="col-12 col-md-6">
+              <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.148956834525!2d100.50166271457677!3d13.76988930058462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2996883c36fd9%3A0xaceacd7754555eaf!2z4LiB4Lij4Lih4LiK4Lil4Lib4Lij4Liw4LiX4Liy4LiZIOC4quC4s-C4meC4seC4geC5geC4nOC4meC4h-C4suC4meC5geC4peC4sOC5guC4hOC4o-C4h-C4geC4suC4ow!5e0!3m2!1sen!2sth!4v1533970444744" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+          </div>
+      </div>
+      <div class="footer-lower">
+          <div class="media-container-row">
+              <div class="col-sm-12">
+                  <hr>
+              </div>
+          </div>
+          <div class="media-container-row mbr-white">
+              <div class="col-sm-6 copyright">
+                  <p class="mbr-text mbr-fonts-style display-7" style="text-align:center">
+                      © Copyright 2018 โครงการโทรมาตรขนาดเล็ก
+                  </p>
+              </div>
+              <!--<div class="col-md-6">
+                  <div class="social-list align-right">
+                      <div class="soc-item">
+                          <a href="https://twitter.com/mobirise" target="_blank">
+                              <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                      <div class="soc-item">
+                          <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                              <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                      <div class="soc-item">
+                          <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                              <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                      <div class="soc-item">
+                          <a href="https://instagram.com/mobirise" target="_blank">
+                              <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                      <div class="soc-item">
+                          <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                              <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                      <div class="soc-item">
+                          <a href="https://www.behance.net/Mobirise" target="_blank">
+                              <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+                          </a>
+                      </div>
+                  </div>
+              </div>-->
+          </div>
+      </div>
+  </div>
+</section>

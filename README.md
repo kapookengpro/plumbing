@@ -49,6 +49,10 @@ ng generate component `name_component`
 ## Create new sub component
 ng generate component path/`name_component`
 
+
+## Create Routing
+ng generate module app-routing --flat --module=app
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

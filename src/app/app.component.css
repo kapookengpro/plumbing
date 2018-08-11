@@ -1,3 +1,5 @@
-agm-map {
-    height: 300px;
-  }
+  .agm-map-container-inner[_ngcontent-c1] {
+    height: 100% !important;
+    width: 100% !important;
+}
+  

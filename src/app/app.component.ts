@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 
 @Component({
   selector: 'app-root',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+  //styles: [' .agm-map-container-inner[_ngcontent-c1] { height: 100% !important; width: 100% !important; }']
 })
 export class AppComponent {
   title = 'plumbing';
