@@ -1,0 +1,14 @@
+[
+    {
+      "lat": 12.888032,
+      "lng": 100.9217876,
+      "label": "A",
+      "draggable": true
+    },
+    {
+      "lat": 12.8684528,
+      "lng": 100.9377521,
+      "label": "B",
+      "draggable": false
+    }
+  ]

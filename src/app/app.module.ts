@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from  '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
-import { AppRoutingModule } from './/app-routing.module';
 import { NavComponent } from './nav/nav.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
@@ -40,6 +40,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     }),

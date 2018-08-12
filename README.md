@@ -49,9 +49,11 @@ ng generate component `name_component`
 ## Create new sub component
 ng generate component path/`name_component`
 
-
 ## Create Routing
 ng generate module app-routing --flat --module=app
+
+## Create Service
+ng g service api
 
 ## Further help
 

@@ -24,7 +24,7 @@
       (dragEnd)="markerDragEnd(m, $event)">
       
     <agm-info-window>
-      <strong><img src="https://seedroid.com/img/post/icons/128/com.shuewe.picturemap.jpg"></strong>
+      <div [innerHTML]="m.data"></div>
     </agm-info-window>
     
   </agm-marker>
