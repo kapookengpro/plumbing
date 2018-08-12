@@ -84,7 +84,8 @@
     margin: .667em 1.667em;
     font-weight: 500;
     padding: 0;
-    transition: color .2s ease-in-out; }
+    /* transition: color .2s ease-in-out; */
+    }
     .nav-dropdown .link.dropdown-toggle {
       margin-right: 2.583em; }
       .nav-dropdown .link.dropdown-toggle::after {

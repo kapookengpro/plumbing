@@ -12,22 +12,18 @@ import { GeneralPageComponent } from './general-page/general-page.component';
 import { StationPageComponent } from './station-page/station-page.component';
 import { RiverBasinPageComponent } from './river-basin-page/river-basin-page.component';
 import { ProvincePageComponent } from './province-page/province-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { IconHelperComponent } from './icon-helper/icon-helper.component';
 
 
-/*const appRoutes: Routes = [
-  { path: 'crisis-center', component: CrisisListComponent },
-  { path: 'hero/:id',      component: HeroDetailComponent },
-  {
-    path: 'heroes',
-    component: HeroListComponent,
-    data: { title: 'Heroes List' }
-  },
-  { path: '',
-    redirectTo: '/heroes',
-    pathMatch: 'full'
-  },
+const appRoutes: Routes = [
+  { path: '', component: LandingPageComponent },
+  { path: 'general', component: GeneralPageComponent },
+  { path: 'station', component: StationPageComponent },
+  { path: 'riverbasin', component: RiverBasinPageComponent },
+  { path: 'province', component: ProvincePageComponent },
   { path: '**', component: PageNotFoundComponent }
-];*/
+];
 
 @NgModule({
   declarations: [
@@ -39,13 +35,18 @@ import { ProvincePageComponent } from './province-page/province-page.component';
     StationPageComponent,
     RiverBasinPageComponent,
     ProvincePageComponent,
+    PageNotFoundComponent,
+    IconHelperComponent,
   ],
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: ''
     }),
-    AppRoutingModule
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
  * Mobirise v4 theme (https://mobirise.com/)
  * Copyright 2017 Mobirise
  */
-section {
+ section {
   background-color: #eeeeee; }
 
 section,
@@ -345,9 +345,10 @@ nav .mbr-section-btn {
     animation: arrowdown 1.7s ease-in-out infinite; }
     .mbr-arrow > a > i {
       position: absolute;
-      top: -2px;
-      left: 15px;
-      font-size: 2rem; }
+      top: 3px;
+      left: 18px;
+      font-size: 2rem;
+      }
 
 @keyframes arrowdown {
   0% {

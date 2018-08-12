@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+.section-content{
+    background-image: url("assets/images/dam1.jpg");
+}
+
+.container-content{
+    padding: 150px 20px 100px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.filter-station{
+    text-align: right;
+}
+
+.filter-station i.info{
+    margin-left: 10px;
+    font-size: 24px;
+    color: #52a9b1;
+    cursor: pointer;
+}
+
+.ui.dimmer .accordion
+{
+    text-align: left;
+}
+
+.ui.dimmer .accordion table{
+    width: 100%;
+    color: black;
+}
+
