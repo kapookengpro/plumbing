@@ -5,6 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './/app-routing.module';
+import { NavComponent } from './nav/nav.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { FooterPageComponent } from './footer-page/footer-page.component';
+import { GeneralPageComponent } from './general-page/general-page.component';
+import { StationPageComponent } from './station-page/station-page.component';
+import { RiverBasinPageComponent } from './river-basin-page/river-basin-page.component';
+import { ProvincePageComponent } from './province-page/province-page.component';
 
 
 /*const appRoutes: Routes = [
@@ -25,6 +32,13 @@ import { AppRoutingModule } from './/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
+    NavComponent,
+    LandingPageComponent,
+    FooterPageComponent,
+    GeneralPageComponent,
+    StationPageComponent,
+    RiverBasinPageComponent,
+    ProvincePageComponent,
   ],
   imports: [
     BrowserModule,
