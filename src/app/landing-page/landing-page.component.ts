@@ -12,7 +12,7 @@ export class LandingPageComponent implements OnInit {
 
 
 private  contacts:  Array<object> = [];
-private markers: marker[] = [];
+public markers: marker[] = [];
 
 constructor(private  apiService:  ApiService) { }
 
@@ -37,9 +37,14 @@ zoom: number = 12;
 lat: number = 12.8887013;
 lng: number = 100.8641094;
 
-clickedMarker(label: string, index: number) {
-  console.log(`clicked the marker: ${label || index}`)
-}
+previous;
+
+  clickedMarker(infowindow) {
+    if (this.previous) {
+        this.previous.close();
+    }
+    this.previous = infowindow;
+ }
 
 /*mapClicked($event: MouseEvent) {
   this.markers.push({

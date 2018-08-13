@@ -12,18 +12,18 @@
   [zoom]="zoom"
   [disableDefaultUI]="false"
   [zoomControl]="false"
-  (mapClick)="mapClicked($event)" style="width:80%;height:65%;position:absolute;top:126px;left:10%;opacity: 0.9;border: 3px solid #656565;border-radius: 4px;">
-
+   style="width:80%;height:65%;position:absolute;top:126px;left:10%;opacity: 0.9;border: 3px solid #656565;border-radius: 4px;">
+<!-- (mapClick)="mapClicked($event)" -->
   <agm-marker 
       *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
+      (markerClick)="clickedMarker(infoWindow)"
       [latitude]="m.lat"
       [longitude]="m.lng"
       [label]="m.label"
       [markerDraggable]="m.draggable"
       (dragEnd)="markerDragEnd(m, $event)">
       
-    <agm-info-window>
+    <agm-info-window #infoWindow>
       <div [innerHTML]="m.data"></div>
     </agm-info-window>
     
