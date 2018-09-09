@@ -4,7 +4,19 @@
 
 export const environment = {
   production: false,
-  API_URL:'http://localhost:4200/assets/json/marker.json'
+  API_URL:'http://localhost:4200/assets/json/marker.json',
+  API_URL_OVERVIEW:'http://localhost:49677/RIDP/Overview',
+
+  API_PROJECT:'http://localhost:49677/RIDP/Project',
+  API_RIVER:'http://localhost:49677/RIDP/River',
+  API_PROVINCE:'http://localhost:49677/RIDP/Province',
+
+  ALL_LINK: 'http://localhost:49677/RIDP/LinkAll',
+  ALL_OFFICE: 'http://localhost:49677/RIDP/OfficeAll',
+  ALL_STATION:'http://localhost:49677/RIDP/StationAll',
+  ALL_PROVINCE:'http://localhost:49677/RIDP/ProvinceAll',
+  ALL_RIVER:'http://localhost:49677/RIDP/RiverAll',
+  RECORD:'http://localhost:49677/RIDP/GetRecord'
 };
 
 /*

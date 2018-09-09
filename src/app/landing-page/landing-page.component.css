@@ -1,4 +1,12 @@
-.agm-map-container-inner[_ngcontent-c4],.agm-map-container-inner[_ngcontent-c5],.agm-map-container-inner[_ngcontent-c6] {
+.agm-map-container-inner[_ngcontent-c4],.agm-map-container-inner[_ngcontent-c5],.agm-map-container-inner[_ngcontent-c6],.agm-map-container-inner[_ngcontent-c7],.agm-map-container-inner[_ngcontent-c8],.agm-map-container-inner[_ngcontent-c9],.agm-map-container-inner[_ngcontent-c10],.agm-map-container-inner[_ngcontent-c11] {
     height: 100% !important;
     width: 100% !important;
+  }
+
+  .ui.steps{
+    border:0;
+  }
+
+  .img-station{
+    margin-right: 5px;
   }

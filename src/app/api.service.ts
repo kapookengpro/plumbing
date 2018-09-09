@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from  '@angular/common/http';
+import { HttpParams,HttpClient} from  '@angular/common/http';
 import { environment } from 'src/environments/environment'
 
 @Injectable({
@@ -7,15 +7,45 @@ import { environment } from 'src/environments/environment'
 })
 export class ApiService {
 
-  API_URL = environment.API_URL;
-  // API_URL  =  'http://localhost:4200/assets/json/marker.json';
-  // API_URL  =  'http://171.100.63.42:8012/assets/json/marker.json';
-
   constructor(private  httpClient:  HttpClient) {}
 
 
   getContacts(){
-    return  this.httpClient.get(this.API_URL);
+    return  this.httpClient.get(environment.API_URL);
+  } 
+
+  getOverview(){
+    return  this.httpClient.get(environment.API_URL_OVERVIEW);
+  } 
+
+  getLinkAll(){
+    return  this.httpClient.get(environment.ALL_LINK);
+  } 
+
+  getOfficeAll(){
+    return  this.httpClient.get(environment.ALL_OFFICE);
+  } 
+
+  getStationAll(){
+    return  this.httpClient.get(environment.ALL_STATION);
+  } 
+
+  getProvinceAll(){
+    return  this.httpClient.get(environment.ALL_PROVINCE);
+  } 
+
+  getRiverAll(){
+    return  this.httpClient.get(environment.ALL_RIVER);
+  } 
+
+  getRecord(station_id,start_date,end_date){
+
+    let params = new HttpParams();
+    params = params.append('station_id', station_id);
+    params = params.append('start_date', start_date.year+"-"+start_date.month+"-"+start_date.day);
+    params = params.append('end_date', end_date.year+"-"+end_date.month+"-"+end_date.day);
+
+    return  this.httpClient.get(environment.RECORD, { params: params });
   } 
 
 }

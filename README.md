@@ -55,6 +55,19 @@ ng generate module app-routing --flat --module=app
 ## Create Service
 ng g service api
 
+#Cordova install
+plumbing>npm i -g cordova
+
+#datable
+npm i angular-6-datatable --save
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Install Ionic
+npm install -g ionic
+
+## Install Ionic
+ionic start ionic4-angular-new tabs --type=angular

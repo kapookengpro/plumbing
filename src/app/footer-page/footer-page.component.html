@@ -19,17 +19,15 @@
               </p>
           </div>
           <div class="col-12 col-md-3 mbr-fonts-style display-7">
-              <p class="mbr-text">
+              <div class="mbr-text">
                   <strong>Links</strong>
                   <br>
-                  <br><a class="text-white" href="http://www.rid.go.th/">กรมชลประทาน</a>
-                  <br><a class="text-white" href="http://water.rid.go.th/hydrology/index.html">ส่วนอุทกวิทยา</a>
-                  <br><a class="text-white" href="http://water.rid.go.th/hydhome">สำนักอุทก</a>
+                  <div *ngFor="let l of links"><a  class="text-white" href="http://{{l.link}}">{{l.text}}</a></div>
                   <br>
                   <br><strong>ไทยนิยม</strong>
                   <br>
                   <br><img src="assets/images/re-thainiyom61.png">
-              </p>
+              </div>
           </div>
           <div class="col-12 col-md-6">
               <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.148956834525!2d100.50166271457677!3d13.76988930058462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2996883c36fd9%3A0xaceacd7754555eaf!2z4LiB4Lij4Lih4LiK4Lil4Lib4Lij4Liw4LiX4Liy4LiZIOC4quC4s-C4meC4seC4geC5geC4nOC4meC4h-C4suC4meC5geC4peC4sOC5guC4hOC4o-C4h-C4geC4suC4ow!5e0!3m2!1sen!2sth!4v1533970444744" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>

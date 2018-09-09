@@ -16,7 +16,9 @@
 <!-- (mapClick)="mapClicked($event)" -->
   <agm-marker 
       *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(infoWindow)"
+      (markerClick)="gotoHashtag()"
+      (mouseOver)="onMouseOver(infoWindow,m)"
+      (mouseOut)="onMouseOut(infoWindow,m)"
       [latitude]="m.lat"
       [longitude]="m.lng"
       [label]="m.label"
@@ -69,32 +71,6 @@
       </p>
   </div>
   <div class="col-lg-4 col-md-5">
-  <div class="form-container">
-      <div class="media-container-column" data-form-type="formoid">
-          <div data-form-alert="" hidden="" class="align-center">
-              Thanks for filling out the form!
-          </div>
-          <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" data-form-email="true" value="yXisQBvFQVmHOcBX79o+bOvDvoLpUn9N6RQ64BjTWOc0bOKDX35xIyci5cAl7E4TuolvqtohEe1ZAfBci8SGal13mIuCRoi+wqhFtb4iJBZOEah2uEZP8rBqC79DMBg6">
-              <div data-for="name">
-                  <div class="form-group">
-                      <input type="text" class="form-control px-3" name="name" data-form-field="Name" placeholder="Name" required="" id="name-header15-2">
-                  </div>
-              </div>
-              <div data-for="email">
-                  <div class="form-group">
-                      <input type="email" class="form-control px-3" name="email" data-form-field="Email" placeholder="Email" required="" id="email-header15-2">
-                  </div>
-              </div>
-              <div data-for="phone">
-                  <div class="form-group">
-                      <input type="tel" class="form-control px-3" name="phone" data-form-field="Phone" placeholder="Phone" id="phone-header15-2">
-                  </div>
-              </div>
-              
-              <span class="input-group-btn"><button href="" type="submit" class="btn btn-form btn-white display-4">SEND FORM</button></span>
-          </form>
-      </div>
-  </div>
   </div>
 </div>
   </div>

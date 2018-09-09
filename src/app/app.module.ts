@@ -14,6 +14,11 @@ import { RiverBasinPageComponent } from './river-basin-page/river-basin-page.com
 import { ProvincePageComponent } from './province-page/province-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { IconHelperComponent } from './icon-helper/icon-helper.component';
+import { ReportPageComponent } from './report-page/report-page.component';
+import {DataTableModule} from "angular-6-datatable";
+import { ExcelService } from './excel.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -22,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'station', component: StationPageComponent },
   { path: 'riverbasin', component: RiverBasinPageComponent },
   { path: 'province', component: ProvincePageComponent },
+  { path: 'report', component: ReportPageComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -37,6 +43,7 @@ const appRoutes: Routes = [
     ProvincePageComponent,
     PageNotFoundComponent,
     IconHelperComponent,
+    ReportPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,10 +53,13 @@ const appRoutes: Routes = [
     }),
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+      { enableTracing: true,useHash:true } // <-- debugging purposes only
+    ),
+    DataTableModule,
+    NgbModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
