@@ -7,7 +7,7 @@ export const environment = {
   API_URL:'http://localhost:4200/assets/json/marker.json',
   API_URL_OVERVIEW:'http://localhost:49677/RIDP/Overview',
 
-  API_PROJECT:'http://localhost:49677/RIDP/Project',
+  API_OFFICE:'http://localhost:49677/RIDP/Office',
   API_RIVER:'http://localhost:49677/RIDP/River',
   API_PROVINCE:'http://localhost:49677/RIDP/Province',
 

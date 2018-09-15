@@ -68,7 +68,8 @@ public  getContacts(){
         lng: +station.longtitude,
         label: station.station_name,
         draggable: false,
-        data:data_html
+        data:data_html,
+        station:station.station_id
       });
     }
 
@@ -100,8 +101,8 @@ previous;
     this.previous = infowindow;
  }
 
- gotoHashtag() {
-  this.router.navigate( [ '/report' ], {  } );
+ gotoHashtag(station) {
+  this.router.navigate( [ '/report',{ station : station} ] );
  }
 
  onMouseOver(infoWindow, gm) {

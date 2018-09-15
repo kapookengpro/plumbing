@@ -3,7 +3,7 @@ export const environment = {
   API_URL:'http://171.100.63.42:8012/assets/json/marker.json',
   API_URL_OVERVIEW:'http://171.100.63.42:8012/songkha_api/RIDP/Overview',
 
-  API_PROJECT:'http://171.100.63.42:8012/songkha_api/RIDP/Project',
+  API_OFFICE:'http://171.100.63.42:8012/songkha_api/RIDP/Office',
   API_RIVER:'http://171.100.63.42:8012/songkha_api/RIDP/River',
   API_PROVINCE:'http://171.100.63.42:8012/songkha_api/RIDP/Province',
 

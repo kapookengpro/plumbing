@@ -1,0 +1,8 @@
+.ui.items>.item>.image:not(.ui)
+{
+    width: unset;
+}
+
+.ui.items>.item .extra{
+    padding: 5px;
+}

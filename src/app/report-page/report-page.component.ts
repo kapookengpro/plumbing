@@ -3,6 +3,7 @@ import { ApiService } from  '../api.service';
 import {ExcelService} from '../excel.service';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-report-page',
@@ -11,7 +12,7 @@ import 'jspdf-autotable';
 })
 export class ReportPageComponent implements OnInit {
 
-  constructor(private  apiService:  ApiService,private ExcelService:ExcelService) { }
+  constructor(private  apiService:  ApiService,private ExcelService:ExcelService,private router: ActivatedRoute) { }
 
   public data = [];
   public station_list = [];
@@ -28,11 +29,12 @@ export class ReportPageComponent implements OnInit {
 
   exportPdf():void{
     let doc = new jsPDF(); 
+    doc.setLanguage('th')
     doc.autoTable([
-      {title: "record_timestamp", dataKey: "record_timestamp"},
-      {title: "water_level_front", dataKey: "water_level_front"}, 
-      {title: "water_level_back", dataKey: "water_level_back"}, 
-      {title: "rainguage", dataKey: "rainguage"}
+      {title: "Time", dataKey: "record_timestamp"},
+      {title: "Water Present", dataKey: "water_level_front"}, 
+      {title: "Water Before", dataKey: "water_level_back"}, 
+      {title: "Rainguage", dataKey: "rainguage"}
     ],
        this.data_records 
     );
@@ -43,11 +45,12 @@ export class ReportPageComponent implements OnInit {
   Search():void{
 
     this.apiService.getRecord(this.station,this.startDate,this.endDate).subscribe((data:  any) => {
-      console.log(data);
       this.data_records = data.Data;
-  });
+    });
 
   }
+
+  private sub: any;
 
   ngOnInit() {
 
@@ -60,6 +63,26 @@ export class ReportPageComponent implements OnInit {
         }
     });
 
+
+    let station_active = this.router.snapshot.paramMap.get('station');
+    if(station_active != null)
+    {
+      this.station = station_active;
+      var date = new Date();
+      this.startDate = {
+        year:date.getFullYear(),
+        month:date.getMonth()+1,
+        day:date.getDate()
+      }
+
+      this.endDate = {
+        year:date.getFullYear(),
+        month:date.getMonth()+1,
+        day:date.getDate()
+      }
+      this.Search();
+    }
+
   }
 
 }
@@ -71,3 +94,5 @@ interface data_record{
 	water_level_back: number;
 	rainguage: number;
 }
+
+

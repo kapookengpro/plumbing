@@ -37,6 +37,20 @@ export class ApiService {
   getRiverAll(){
     return  this.httpClient.get(environment.ALL_RIVER);
   } 
+  
+
+  getOffice(id){
+    return  this.httpClient.get(environment.API_OFFICE+"/"+id);
+  } 
+
+  getProvince(id){
+    return  this.httpClient.get(environment.API_PROVINCE+"/"+id);
+  } 
+
+  getRiver(id){
+    return  this.httpClient.get(environment.API_RIVER+"/"+id);
+  }
+
 
   getRecord(station_id,start_date,end_date){
 

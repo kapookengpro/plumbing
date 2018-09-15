@@ -1,95 +1,78 @@
 <section class="section-content">
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(152, 152, 152);"></div>
-    <div class="container container-content">
-  
-        <h2 class="ui dividing header">
-            จังหวัด
-        </h2>
-        <br><br>
-        <div class="filter-station">
-            <div class="ui labeled input">
-                <div class="ui label">
-                    ศูนย์หรือโครงการ
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(152, 152, 152);"></div>
+  <div class="container container-content">
+
+      <h2 class="ui dividing header">
+          จังหวัด
+      </h2>
+      <br><br>
+      <div class="filter-station">
+          <div class="ui labeled input">
+              <div class="ui label">
+                  จังหวัด
+              </div>
+              <select class="" [(ngModel)]="province" (change)="SelectProvince()">
+                <option *ngFor="let item of Provinces" value="{{item.Value}}">{{item.Text}}</option>
+              </select>
+            </div>
+      </div>
+      
+      <br><br><br>
+      
+
+    <div class="ui divided items">
+
+      
+
+      <div class="item" *ngFor="let item of Stations">
+        <div class="image">
+          
+          <div class="ui card">
+              <div class="ui slide masked reveal image">
+                  <img src='assets/station/{{item.image}}' />
+              </div>
+              <div class="content">
+                <a class="header">{{item.station_name}}</a>
+                <div class="meta">
+                  <span class="date">อัพเดทล่าสุด {{item.record_time}}</span>
                 </div>
-                <select class="">
-                  <option value="all">แสดงเซนเซอร์ในศูนย์หรือโครงการทั้งหมด</option>
-                </select>
               </div>
-              <i onclick="$('.segment').dimmer('show');" class="fas fa-question-circle info"></i>
+            </div>
         </div>
-        
-        <br><br><br>
-        
-  
-      <div class="ui divided items">
-        <div class="item">
-          <div class="image">
-            <img src="assets/images/image.png">
+        <div class="content">
+          <a class="header">{{item.station_name}}</a>
+          <div class="meta">
+            <span class="cinema">{{item.address}}</span>
           </div>
-          <div class="content">
-            <a class="header">12 Years a Slave</a>
-            <div class="meta">
-              <span class="cinema">Union Square 14</span>
-            </div>
-            <div class="description">
-              <img src="assets/images/short-paragraph.png" class="ui wireframe image">
-            </div>
-            <div class="extra">
-              <div class="ui label"><i class="fab fa-houzz"></i>&nbsp;&nbsp;สถานี</div>
-              <div class="ui label"><i class="fas fa-project-diagram"></i>&nbsp;&nbsp;ศูนย์/โครงการ</div>
-              <div class="ui label"><i class="fas fa-bullseye"></i>&nbsp;&nbsp;สถานะเซนเซอร์</div>
-              <div class="ui label"><i class="fas fa-tint"></i>&nbsp;&nbsp;ลุ่มน้ำ</div>
-              <div class="ui label"><i class="fas fa-thermometer"></i>&nbsp;&nbsp;เซนเซอร์</div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/images/image.png">
-          </div>
-          <div class="content">
-            <a class="header">My Neighbor Totoro</a>
-            <div class="meta">
-              <span class="cinema">IFC Cinema</span>
-            </div>
-            <div class="description">
-              <img src="assets/images/short-paragraph.png" class="ui wireframe image">
-            </div>
-            <div class="extra">
-                <div class="ui label"><i class="fab fa-houzz"></i>&nbsp;&nbsp;สถานี</div>
-                <div class="ui label"><i class="fas fa-project-diagram"></i>&nbsp;&nbsp;ศูนย์/โครงการ</div>
-                <div class="ui label"><i class="fas fa-bullseye"></i>&nbsp;&nbsp;สถานะเซนเซอร์</div>
-                <div class="ui label"><i class="fas fa-tint"></i>&nbsp;&nbsp;ลุ่มน้ำ</div>
-                <div class="ui label"><i class="fas fa-thermometer"></i>&nbsp;&nbsp;เซนเซอร์</div>
+          <div class="description">
+            <div class="row">
+              <div class="col-md-8">{{item.detail}}</div>
+              <div class="col-md-4">
+                  <div class="ui card" style="width: 150px;">
+                      <div class="ui">
+                          <img class="ui medium bordered" src='assets/station_record/{{item.last_image}}' width='150' />
+                      </div>
+                      <div class="content">
+                        <a class="header" style="font-size:12px;"><i class="fas fa-thermometer-half" style="color:#07b8ab;"></i>&nbsp;&nbsp;ระดับน้ำฝน&nbsp;&nbsp;=&nbsp;&nbsp;{{item.rainguage}}</a>
+                        <div class="meta" style="font-size:10px;">
+                          <span class="date"><i class="fas fa-tint" style="color:#bf8ec4;"></i>&nbsp;&nbsp;ระดับน้ำก่อนหน้า&nbsp;&nbsp;=&nbsp;&nbsp;{{item.water_level_back}}</span>
+                        </div>
+                      </div>
+                      <div class="extra content">
+                        <a>
+                          <i class="fas fa-tint" style="color:#07b8ab;"></i>&nbsp;&nbsp;ระดับน้ำตอนนี้&nbsp;&nbsp;=&nbsp;&nbsp;{{item.water_level_front}}
+                        </a>
+                      </div>
+                    </div>
               </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="image">
-            <img src="assets/images/image.png">
-          </div>
-          <div class="content">
-            <a class="header">Watchmen</a>
-            <div class="meta">
-              <span class="cinema">IFC</span>
-            </div>
-            <div class="description">
-              <img src="assets/images/short-paragraph.png" class="ui wireframe image">
-            </div>
-            <div class="extra">
-                <div class="ui label"><i class="fab fa-houzz"></i>&nbsp;&nbsp;สถานี</div>
-                <div class="ui label"><i class="fas fa-project-diagram"></i>&nbsp;&nbsp;ศูนย์/โครงการ</div>
-                <div class="ui label"><i class="fas fa-bullseye"></i>&nbsp;&nbsp;สถานะเซนเซอร์</div>
-                <div class="ui label"><i class="fas fa-tint"></i>&nbsp;&nbsp;ลุ่มน้ำ</div>
-                <div class="ui label"><i class="fas fa-thermometer"></i>&nbsp;&nbsp;เซนเซอร์</div>
             </div>
           </div>
         </div>
       </div>
-  
     </div>
-  </section>
-  
-  
-  
-  
+
+  </div>
+</section>
+
+
+

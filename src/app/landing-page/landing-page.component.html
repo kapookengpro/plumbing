@@ -16,7 +16,7 @@
 <!-- (mapClick)="mapClicked($event)" -->
   <agm-marker 
       *ngFor="let m of markers; let i = index"
-      (markerClick)="gotoHashtag()"
+      (markerClick)="gotoHashtag(m.station)"
       (mouseOver)="onMouseOver(infoWindow,m)"
       (mouseOut)="onMouseOut(infoWindow,m)"
       [latitude]="m.lat"
@@ -48,11 +48,11 @@
           </div>-->
       </div>
   </div>
-  <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+  <!-- <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
       <a href="#next">
           <i class="mbri-down mbr-iconfont"></i>
       </a>
-  </div>
+  </div> -->
 </section>
 
 <section class="cid-qyY7XZqMLr mbr-fullscreen mbr-parallax-background" id="header15-2" data-rv-view="1215">
@@ -74,9 +74,9 @@
   </div>
 </div>
   </div>
-  <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+  <!-- <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
       <a href="#next">
           <i class="mbri-down mbr-iconfont"></i>
       </a>
-  </div>
+  </div> -->
 </section>

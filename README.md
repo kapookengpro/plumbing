@@ -33,6 +33,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng build` to build the project. ng build --base-href=`projectname` --prod
 
 ## Build To Another Folder
+ng build --output-path `dist/production` --prod
 ng build --output-path `dist/production` --base-href=plumbing --prod
 
 ## Running unit tests
