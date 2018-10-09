@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from  '@angular/common/http';
@@ -19,6 +20,7 @@ import {DataTableModule} from "angular-6-datatable";
 import { ExcelService } from './excel.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 
 const appRoutes: Routes = [
@@ -57,7 +59,9 @@ const appRoutes: Routes = [
     ),
     DataTableModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [ExcelService],
   bootstrap: [AppComponent]

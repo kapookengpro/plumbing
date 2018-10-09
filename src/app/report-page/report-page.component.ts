@@ -4,6 +4,7 @@ import {ExcelService} from '../excel.service';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { ActivatedRoute } from '@angular/router';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-report-page',
@@ -18,9 +19,37 @@ export class ReportPageComponent implements OnInit {
   public station_list = [];
   public data_records: data_record[] = [];
 
+  
+
   station;
   startDate;
   endDate;
+
+
+  single: any[];
+  multi: any[];
+
+  view: any[] = [700, 400];
+
+  // options
+  showXAxis = true;
+  showYAxis = true;
+  gradient = false;
+  showLegend = true;
+  showLegendText = "ประเภท";
+  showXAxisLabel = true;
+  xAxisLabel = 'วันเวลา';
+  showYAxisLabel = true;
+  yAxisLabel = 'ระดับน้ำ';
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
+
+  // line, area
+  autoScale = true;
+
+  
 
   exportAsXLSX():void {
     this.ExcelService.exportAsExcelFile(this.data_records, this.station);
@@ -45,7 +74,8 @@ export class ReportPageComponent implements OnInit {
   Search():void{
 
     this.apiService.getRecord(this.station,this.startDate,this.endDate).subscribe((data:  any) => {
-      this.data_records = data.Data;
+      this.data_records = data.Data.record;
+      this.multi = data.Data.chart;
     });
 
   }
@@ -85,6 +115,8 @@ export class ReportPageComponent implements OnInit {
 
   }
 
+  
+
 }
 
 
@@ -94,5 +126,64 @@ interface data_record{
 	water_level_back: number;
 	rainguage: number;
 }
+
+export var single = [
+  {
+    "name": "Germany",
+    "value": 8940000
+  },
+  {
+    "name": "USA",
+    "value": 5000000
+  },
+  {
+    "name": "France",
+    "value": 7200000
+  }
+];
+
+export var multi = [
+  {
+    "name": "Germany",
+    "series": [
+      {
+        "name": "2010",
+        "value": 7300000
+      },
+      {
+        "name": "2011",
+        "value": 8940000
+      }
+    ]
+  },
+
+  {
+    "name": "USA",
+    "series": [
+      {
+        "name": "2010",
+        "value": 7870000
+      },
+      {
+        "name": "2011",
+        "value": 8270000
+      }
+    ]
+  },
+
+  {
+    "name": "France",
+    "series": [
+      {
+        "name": "2010",
+        "value": 5000002
+      },
+      {
+        "name": "2011",
+        "value": 5800000
+      }
+    ]
+  }
+];
 
 

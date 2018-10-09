@@ -37,6 +37,25 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <ngx-charts-line-chart
+          [view]="view"
+          [scheme]="colorScheme"
+          [results]="multi"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [legendTitle]="showLegendText"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [autoScale]="autoScale"
+          >
+        </ngx-charts-line-chart>
+        </div>
       
           <table class="ui compact celled definition table" [mfData]="data_records" #mf="mfDataTable" [mfRowsOnPage]="600">
                 <thead>
@@ -84,6 +103,8 @@
                   </tr>
                 </tfoot>
               </table>
+
+              
 
      
   </div>
