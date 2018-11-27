@@ -45,7 +45,7 @@ public  getContacts(){
                 <div class='content'>"+ station.water_level_front +"</div> \
               </div> \
               <div class='item'> \
-                ระดับน้ำก่อนหน้า \
+                ระดับตลิ่ง \
                 <div class='content'>"+ station.water_level_back +"</div> \
               </div> \
               <div class='item'> \
